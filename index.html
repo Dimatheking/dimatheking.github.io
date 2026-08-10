@@ -84,11 +84,38 @@
   }
 
   .crown {
-    width: 84px;
-    height: 84px;
-    margin-bottom: 1.25rem;
-    filter: drop-shadow(0 4px 18px var(--shadow));
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0.4rem;
+    filter: drop-shadow(0 4px 14px var(--shadow));
     animation: settle 900ms cubic-bezier(.2,.9,.25,1) both;
+  }
+
+  .portrait-frame {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1.75rem;
+    animation: settle 950ms 60ms cubic-bezier(.2,.9,.25,1) both;
+  }
+
+  .portrait-ring {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg, var(--gold-bright), var(--gold), var(--gold-bright), var(--gold), var(--gold-bright));
+    filter: drop-shadow(0 8px 24px var(--shadow));
+  }
+
+  .portrait-frame img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 27%;
+    border: 4px solid var(--bg);
+    display: block;
   }
 
   .eyebrow {
@@ -176,7 +203,7 @@
 </style>
 </head>
 <body>
-<canvas id="glow" width="1280" height="587"></canvas>
+<canvas id="glow" width="1920" height="947"></canvas>
 <main>
   <svg class="crown" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A crown">
     <path d="M10 70 L10 34 L28 52 L50 20 L72 52 L90 34 L90 70 Z" fill="none" stroke="var(--gold)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path>
@@ -185,6 +212,11 @@
     <circle cx="90" cy="30" r="5" fill="var(--gold)"></circle>
     <rect x="10" y="70" width="80" height="6" rx="2" fill="var(--gold)"></rect>
   </svg>
+
+  <div class="portrait-frame">
+    <div class="portrait-ring"></div>
+    <img src="index_files/dima_7_LV.png" alt="Dima, wearing a golden laurel crown, holding a yellow mug">
+  </div>
 
   <p class="eyebrow">By decree, this domain belongs to</p>
   <h1>Dima</h1>
